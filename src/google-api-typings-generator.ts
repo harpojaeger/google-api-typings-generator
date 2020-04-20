@@ -564,7 +564,8 @@ export class App {
 
         writer.writeLine(`// Type definitions for non-npm package ${api.ownerName} ${api.title} ${api.version} ${convertVersion(api.version)}`);
         writer.writeLine(`// Project: ${api.documentationLink}`);
-        writer.writeLine(`// Definitions by: Bolisov Alexey <https://github.com/Bolisov> and Harpo Jaeger <https://github.com/harpojaeger>`);
+        writer.writeLine(`// Definitions by: Bolisov Alexey <https://github.com/Bolisov>`);
+        writer.writeLine(`//                 Harpo Jaeger <https://github.com/harpojaeger>`);
         writer.writeLine(`// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped`);
         writer.writeLine(`// TypeScript Version: 2.3`);
         writer.writeLine();
