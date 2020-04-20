@@ -566,7 +566,7 @@ export class App {
             writer = new TypescriptTextWriter(new IndentedTextWriter(new StreamWriter(stream))),
             rootNamespace = `gapi.client.${api.name}`;
 
-        writer.writeLine(`// Type definitions for ${api.ownerName} ${api.title} ${api.version} ${convertVersion(api.version)}`);
+        writer.writeLine(`// Type definitions for non-npm package ${api.ownerName} ${api.title} ${api.version} ${convertVersion(api.version)}`);
         writer.writeLine(`// Project: ${api.documentationLink}`);
         writer.writeLine(`// Definitions by: Bolisov Alexey <https://github.com/Bolisov>`);
         writer.writeLine(`// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped`);
@@ -618,13 +618,13 @@ export class App {
                         });
                     }
                 });
-                
+
                 this.writeResources(writer, api.resources, api.parameters, api.schemas);
 
                 forEachOrdered(api.resources, (resource, resourceName) => {
                     if (resourceName !== "debugger") {
-                        writer.endLine();                        
-                        writer.writeLine(`const ${resourceName}: ${api.name}.${this.getResourceTypeName(resourceName)};`);                        
+                        writer.endLine();
+                        writer.writeLine(`const ${resourceName}: ${api.name}.${this.getResourceTypeName(resourceName)};`);
                     }
                 });
             });
